@@ -38,7 +38,7 @@ jobs:
           meltano add loader target-bigquery
 
       - name: Run meltano
-        run: meltano elt tap-spreadsheets-anywhere target-postgres
+        run: meltano elt tap-spreadsheets-anywhere target-bigquery
 
       - name: Install dbt dependencies
         run: |
