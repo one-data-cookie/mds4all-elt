@@ -4,8 +4,8 @@ mds4all:
     prod:
       type: bigquery
       method: service-account
-      project: "{{ env_var('BIGQUERY_PROJECT) }}"
-      dataset: "{{ env_var('BIGQUERY_DATASET_PROD) }}"
+      project: "{{ env_var('BIGQUERY_PROJECT') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET_PROD') }}"
       location: eu
       threads: 1
       timeout_seconds: 300
@@ -14,8 +14,8 @@ mds4all:
     dev:
       type: bigquery
       method: service-account
-      project: "{{ env_var('BIGQUERY_PROJECT) }}"
-      dataset: "{{ env_var('BIGQUERY_DATASET_DEV) }}"
+      project: "{{ env_var('BIGQUERY_PROJECT') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET_DEV') }}"
       location: eu
       threads: 1
       timeout_seconds: 300
