@@ -50,3 +50,10 @@ jobs:
 
       - name: Test dbt models
         run: dbt test
+
+      - name: Generate docs
+        run: dbt docs generate
+        uses: actions/upload-artifact@v2
+        with:
+          name: dbt-docs
+          path: docs
