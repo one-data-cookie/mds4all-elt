@@ -54,8 +54,16 @@ jobs:
       - name: Generate docs
         run: dbt docs generate
         
-      - name: Save docs as artifacts
+      - name: Upload docs as artifacts
         uses: actions/upload-artifact@v2
         with:
           name: dbt-docs
-          path: target
+          path: |
+            target/ndex.html
+            target/*.json
+
+      - name: Put docs to repo
+        uses: actions/download-artifact@v2
+        with:
+          name: dbt-docs
+          path: docs
