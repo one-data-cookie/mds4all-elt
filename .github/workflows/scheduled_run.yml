@@ -1,8 +1,11 @@
 name: scheduled_run
 
 on:
-  schedule:
-    - cron:  '0 5 * * *'
+  workflow_dispatch
+# on:
+#   schedule:
+#     - cron:  '0 5 * * *'
+
 env:
   DBT_PROFILES_DIR: ./
   BIGQUERY_PROJECT: mds4all
