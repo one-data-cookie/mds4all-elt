@@ -59,7 +59,7 @@ jobs:
         with:
           name: dbt-docs
           path: |
-            target/ndex.html
+            target/index.html
             target/*.json
 
       - name: Put docs to repo
