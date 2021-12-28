@@ -33,7 +33,7 @@ jobs:
 
       - name: Install meltano dependencies
         run: |
-          pip install meltano
+          pip install meltano==1.90.1
           meltano install extractor tap-spreadsheets-anywhere
           meltano install loader target-bigquery
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Install dbt dependencies
         run: |
-          pip install dbt-bigquery
+          pip install dbt-bigquery==1.0.0
           dbt deps
       
       - name: Run dbt models
