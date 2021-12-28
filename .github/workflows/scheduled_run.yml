@@ -31,7 +31,16 @@ jobs:
         env:
           KEYFILE: ${{ secrets.BIGQUERY_KEYFILE }}
 
-      - name: Install dependencies
+      - name: Install meltano dependencies
+        run: |
+          pip install meltano
+          meltano add extractor tap-spreadsheets-anywhere
+          meltano add loader target-bigquery
+
+      - name: Run meltano
+        run: meltano elt tap-spreadsheets-anywhere target-postgres
+
+      - name: Install dbt dependencies
         run: |
           pip install dbt-bigquery
           dbt deps
