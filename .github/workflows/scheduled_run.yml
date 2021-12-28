@@ -8,8 +8,7 @@ on:
 env:
   DBT_PROFILES_DIR: ./
   BIGQUERY_PROJECT: mds4all
-  BIGQUERY_DATASET_PROD: analytics
-  BIGQUERY_DATASET_DEV: dev
+  BIGQUERY_DATASET: analytics
   BIGQUERY_KEYFILE_PATH: ./bigquery-sa.json
 
 jobs:

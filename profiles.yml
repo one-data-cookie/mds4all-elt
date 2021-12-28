@@ -5,17 +5,7 @@ mds4all:
       type: bigquery
       method: service-account
       project: "{{ env_var('BIGQUERY_PROJECT') }}"
-      dataset: "{{ env_var('BIGQUERY_DATASET_PROD') }}"
-      location: eu
-      threads: 1
-      timeout_seconds: 300
-      priority: interactive
-      keyfile: "{{ env_var('BIGQUERY_KEYFILE_PATH') }}"
-    dev:
-      type: bigquery
-      method: service-account
-      project: "{{ env_var('BIGQUERY_PROJECT') }}"
-      dataset: "{{ env_var('BIGQUERY_DATASET_DEV') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET') }}"
       location: eu
       threads: 1
       timeout_seconds: 300
