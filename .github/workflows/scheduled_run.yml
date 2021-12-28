@@ -35,7 +35,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install dbt
+          pip install dbt-bigquery
           dbt deps
       
       - name: Run dbt models
