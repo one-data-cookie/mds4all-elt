@@ -1,4 +1,4 @@
-name: scheduled_run
+name: run_elt
 
 on:
   workflow_dispatch:
@@ -12,8 +12,8 @@ env:
   BIGQUERY_KEYFILE_PATH: ./bigquery-sa.json
 
 jobs:
-  scheduled_run:
-    name: scheduled_run
+  run_elt:
+    name: run_elt
     runs-on: ubuntu-latest
 
     steps:
