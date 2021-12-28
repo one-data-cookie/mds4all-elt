@@ -34,4 +34,4 @@ plugins:
       project_id: "{{ env_var('BIGQUERY_PROJECT') }}"
       dataset_id: "{{ env_var('BIGQUERY_DATASET') }}"
       location: EU
-      credentials_path: "{{ env_var('DBT_BIGQUERY_KEYFILE_PATH') }}"
+      credentials_path: "{{ env_var('BIGQUERY_KEYFILE_PATH') }}"
