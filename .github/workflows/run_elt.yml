@@ -54,16 +54,12 @@ jobs:
       - name: Generate docs
         run: dbt docs generate
         
-      - name: Upload docs as artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: dbt-docs
-          path: |
-            target/index.html
-            target/*.json
-
-      - name: Put docs to repo
-        uses: actions/download-artifact@v2
-        with:
-          name: dbt-docs
-          path: docs
+      - name: Push docs to repo if changed
+        run: |
+          mv target docs
+          git config user.name "Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/index.html docs/*.json
+          timestamp=$(date -u "+%d/%m/%Y %H:%M:%S %Z")
+          git commit -m "Update docs: ${timestamp}" || exit 0
+          git push
