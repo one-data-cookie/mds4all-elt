@@ -31,7 +31,7 @@ plugins:
     variant: adswerve
     pip_url: git+https://github.com/adswerve/target-bigquery.git@v0.10.2
     config:
-      project_id: "{{ env_var('BIGQUERY_PROJECT') }}"
-      dataset_id: "{{ env_var('BIGQUERY_DATASET') }}"
+      project_id: $BIGQUERY_PROJECT
+      dataset_id: $BIGQUERY_DATASET
       location: EU
-      credentials_path: "{{ env_var('BIGQUERY_KEYFILE_PATH') }}"
+      credentials_path: $BIGQUERY_KEYFILE_PATH
