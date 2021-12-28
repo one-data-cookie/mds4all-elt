@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: stg_us_elections_house
+    description: Staging table for US House elections
+  - name: stg_us_elections_senate
+    description: Staging table for US Senate elections
+  - name: stg_us_elections_president
+    description: Staging table for US President elections

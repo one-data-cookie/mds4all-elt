@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: mds4all
+    schema: analytics
+    loader: meltano
+    tables:
+      - name: mit_us_elections_house
+        description: Source data from MIT for US House elections
+      - name: mit_us_elections_senate
+        description: Source data from MIT for US Senate elections
+      - name: mit_us_elections_president
+        description: Source data from MIT for US President elections

@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: us_elections_house
+    description: Election results for the US House of Representatives by party.
+  - name: us_elections_senate
+    description: Election results for the US Senate by party.
+  - name: us_elections_president
+    description: Election results for the US presidential elections by party.

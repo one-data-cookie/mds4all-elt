@@ -57,6 +57,7 @@ coverage.xml
 
 # Django stuff:
 *.log
+*.log.legacy
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -71,8 +72,11 @@ instance/
 # Sphinx documentation
 docs/_build/
 
-# PyBuilder
+# dbt
 target/
+dbt_packages/
+dbt_modules/
+logs/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -127,3 +131,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Credentials
+bigquery-sa.json

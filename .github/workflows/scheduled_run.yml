@@ -1,0 +1,42 @@
+name: scheduled_run
+
+on:
+  schedule:
+    - cron:  '0 5 * * *'
+env:
+  DBT_PROFILES_DIR: ./
+  BIGQUERY_PROJECT: mds4all
+  BIGQUERY_DATASET_PROD: analytics
+  BIGQUERY_DATASET_DEV: dev
+  BIGQUERY_KEYFILE_PATH: ./bigquery-sa.json
+
+jobs:
+  scheduled_run:
+    name: scheduled_run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@main
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8.x"
+
+      - name: Write creds keyfile to BigQuery
+        run: 'echo "$KEYFILE" > $BIGQUERY_KEYFILE_PATH'
+        shell: bash
+        env:
+          KEYFILE: ${{ secrets.BIGQUERY_KEYFILE }}
+
+      - name: Install dependencies
+        run: |
+          pip install dbt
+          dbt deps
+      
+      - name: Run dbt models
+        run: dbt run
+
+      - name: Test dbt models
+        run: dbt test

@@ -1,0 +1,37 @@
+version: 1
+plugins:
+  extractors:
+  - name: tap-spreadsheets-anywhere
+    pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
+    config:
+      tables:
+      - path: https://dataverse.harvard.edu/api/access/datafile/
+        name: mit_us_elections_house
+        pattern: '4202836'
+        start_date: '2010-01-01T00:00:00Z'
+        key_properties: []
+        format: csv
+        delimiter: "\t"
+      - path: https://dataverse.harvard.edu/api/access/datafile/
+        name: mit_us_elections_senate
+        pattern: '4300300'
+        start_date: '2010-01-01T00:00:00Z'
+        key_properties: []
+        format: csv
+        delimiter: "\t"
+      - path: https://dataverse.harvard.edu/api/access/datafile/
+        name: mit_us_elections_president
+        pattern: '4299753'
+        start_date: '2010-01-01T00:00:00Z'
+        key_properties: []
+        format: csv
+        delimiter: "\t"
+  loaders:
+  - name: target-bigquery
+    variant: adswerve
+    pip_url: git+https://github.com/adswerve/target-bigquery.git@v0.10.2
+    config:
+      project_id: "{{ env_var('BIGQUERY_PROJECT) }}"
+      dataset_id: "{{ env_var('BIGQUERY_DATASET_PROD) }}"
+      location: EU
+      credentials_path: "{{ env_var('DBT_BIGQUERY_KEYFILE_PATH') }}"
