@@ -32,7 +32,10 @@ jobs:
           KEYFILE: ${{ secrets.BIGQUERY_KEYFILE }}
 
       - name: Install meltano dependencies
-        run: pip install meltano
+        run: |
+          pip install meltano
+          meltano install extractor tap-spreadsheets-anywhere
+          meltano install loader target-bigquery
 
       - name: Run meltano
         run: meltano elt tap-spreadsheets-anywhere target-bigquery
