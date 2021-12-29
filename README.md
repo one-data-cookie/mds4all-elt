@@ -12,7 +12,7 @@ Minimalistic and free *m*odern *d*ata *s*tack, hence *for all*.
   - Visualising: [Superset](https://superset.apache.org/) on [Heroku](https://dashboard.heroku.com/)
 
 # mds4all-elt
-Visualisation layer of `mds4all`.
+ELT layer of `mds4all`.
 
 ## Limitations
 - Public repository
