@@ -134,3 +134,6 @@ dmypy.json
 
 # Credentials
 bigquery-sa.json
+
+# Mac
+.DS_Store
