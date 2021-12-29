@@ -1,5 +1,5 @@
 # mds4all
-Minimalistic and free *m*odern *d*ata *s*tack, hence *for all*.
+Minimalistic and free **m**odern **d**ata **s**tack, hence **for all**.
 
 - [`one-data-cookie/mds4all-elt`](https://github.com/one-data-cookie/mds4all-elt):
   - Warehousing: [Google BigQuery](https://cloud.google.com/bigquery/)
@@ -8,8 +8,14 @@ Minimalistic and free *m*odern *d*ata *s*tack, hence *for all*.
   - Transforming: [dbt](https://www.getdbt.com/)
   - Cataloging: [dbt docs](https://www.getdbt.com/docs/) on [GitHub Pages](https://pages.github.com/)
 
-- [`one-data-cookie/mds4all-superset`](https://github.com/one-data-cookie/mds4all-superset).
+- [`one-data-cookie/mds4all-superset`](https://github.com/one-data-cookie/mds4all-superset):
   - Visualising: [Superset](https://superset.apache.org/) on [Heroku](https://dashboard.heroku.com/)
+
+- `general`:
+  - Code-editing: [VS Code](https://code.visualstudio.com/) with:
+    - [BigQuery Runner](https://marketplace.visualstudio.com/items?itemName=minodisk.bigquery-runner)
+    - [dbt Power User](https://marketplace.visualstudio.com/items?itemName=innoverio.vscode-dbt-power-user)
+    - [dbt Language Server](https://marketplace.visualstudio.com/items?itemName=Fivetran.dbt-language-server)
 
 # mds4all-elt
 ELT layer of `mds4all`.
