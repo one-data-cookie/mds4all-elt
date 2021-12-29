@@ -11,7 +11,7 @@ Minimalistic and free **m**odern **d**ata **s**tack, hence **for all**.
 - [`one-data-cookie/mds4all-superset`](https://github.com/one-data-cookie/mds4all-superset):
   - Visualising: [Superset](https://superset.apache.org/) on [Heroku](https://dashboard.heroku.com/)
 
-- `general`:
+- `other`:
   - Code-editing: [VS Code](https://code.visualstudio.com/) with:
     - [BigQuery Runner](https://marketplace.visualstudio.com/items?itemName=minodisk.bigquery-runner)
     - [dbt Power User](https://marketplace.visualstudio.com/items?itemName=innoverio.vscode-dbt-power-user)
