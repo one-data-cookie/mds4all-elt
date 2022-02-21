@@ -33,7 +33,7 @@ jobs:
 
       - name: Install meltano dependencies
         run: |
-          pip install meltano==1.90.1
+          pip install meltano==1.96.0
           meltano install extractor tap-spreadsheets-anywhere
           meltano install loader target-bigquery
 
