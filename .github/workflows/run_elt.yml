@@ -2,8 +2,8 @@ name: run_elt
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * *'
+#  schedule:
+#    - cron: '0 5 * * *'
 
 env:
   DBT_PROFILES_DIR: ./
@@ -44,7 +44,7 @@ jobs:
         run: |
           pip install dbt-bigquery==1.0.0
           dbt deps
-      
+
       - name: Run dbt models
         run: dbt run
 
@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate docs
         run: dbt docs generate
-        
+
       - name: Push docs to repo if changed
         run: |
           mv target docs
